@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 public class Processo {
 	private String numero;
 	private Interessado interessado;
+	private String nomeInteressado;
 	private String assunto;
 	private Setor unidadeOrigem;
 	private LocalDateTime dataEntrada; //Hora registro do processo no banco
@@ -36,6 +37,10 @@ public class Processo {
 		this.assunto = assunto;
 		this.unidadeOrigem = unidadeOrigem;
 	}
+	
+	public Processo() {
+		
+	}
 
 	public String getNumero() {
 		return numero;
@@ -43,6 +48,14 @@ public class Processo {
 
 	public void setNumero(String numero) {
 		this.numero = numero;
+	}
+	
+	public String getNomeInteressado() {
+		return nomeInteressado;
+	}
+
+	public void setNomeInteressado(String nomeInteressado) {
+		this.nomeInteressado = nomeInteressado;
 	}
 
 	public Interessado getInteressado() {
