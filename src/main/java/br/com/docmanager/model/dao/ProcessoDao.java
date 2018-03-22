@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import br.com.docmanager.model.Pessoa;
 import br.com.docmanager.model.Processo;
 
 /**
@@ -15,12 +14,12 @@ import br.com.docmanager.model.Processo;
  * @author lets
  *
  */
-public final class ProcessoDao implements DAO {
+public final class ProcessoDao implements DAO<Processo> {
+	
 	private static final HashMap<String, Processo> banco = new HashMap<String, Processo>();
 	
 	
 	public Processo buscarPorChave(String numeroProcesso) {
-		
 		return banco.get(numeroProcesso);
 	}
 	
@@ -28,27 +27,24 @@ public final class ProcessoDao implements DAO {
 		return banco.containsKey(key);
 	}
 
-	public void salvar(Object bean) {
-		Processo processo = (Processo) bean;
-		banco.put(processo.getNumero(), processo);
+	public void salvar(Processo bean) {
+		banco.put(bean.getNumero(), bean);
 		
 		
 	}
 
-	public void atualizar(Object bean) {
+	public void atualizar(Processo bean) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void deletar(Object id) {
-		String numeroProcesso = (String)id;
-		banco.remove(numeroProcesso);
+	public void deletar(Processo processo) {
+		banco.remove(processo.getNumero());
 		
 	}
 
-	public Object getById(Object id) {
-		String numeroProcesso = (String)id;
-		return banco.get(numeroProcesso);
+	public Processo getById(Processo processo) {
+		return banco.get(processo.getNumero());
 	}
 
 	public List<Processo> getAll() {

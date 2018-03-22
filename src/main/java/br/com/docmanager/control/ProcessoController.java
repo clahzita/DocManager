@@ -47,7 +47,7 @@ public class ProcessoController {
 	
 	public void removerBanco() {
 		
-		this.dao.deletar(this.model.getNumero());
+		this.dao.deletar(this.model);
 		
 	}
 	

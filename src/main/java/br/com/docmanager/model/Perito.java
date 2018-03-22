@@ -49,10 +49,4 @@ public class Perito extends Pessoa {
 		this.numeroConselho = numeroConselho;
 	}
 	
-	
-	
-	
-	
-	
-
 }
