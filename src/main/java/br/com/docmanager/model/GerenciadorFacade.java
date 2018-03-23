@@ -3,6 +3,11 @@
  */
 package br.com.docmanager.model;
 
+import br.com.docmanager.model.domain.Interessado;
+import br.com.docmanager.model.domain.Orgao;
+import br.com.docmanager.model.domain.Processo;
+import br.com.docmanager.model.domain.Situacao;
+
 /**
  * @author clah
  *

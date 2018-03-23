@@ -1,10 +1,11 @@
 /**
  * 
  */
-package br.com.docmanager.model;
+package br.com.docmanager.model.domain;
 
 import java.time.LocalDateTime;
 
+import br.com.docmanager.model.dao.IDao;
 import br.com.docmanager.model.dao.HashProcessoDao;
 
 /**
@@ -128,7 +129,7 @@ public class Processo {
 	
 	public void criar(Processo processo) {
 		processo.validate();
-		HashProcessoDao banco = new HashProcessoDao();
+		IDao banco = new HashProcessoDao();
 		banco.salvar(processo);
 		
 		

@@ -1,8 +1,8 @@
 package br.com.pds.DocManager2;
 
 import br.com.docmanager.model.GerenciadorFacade;
-import br.com.docmanager.model.Orgao;
 import br.com.docmanager.model.dao.HashProcessoDao;
+import br.com.docmanager.model.domain.Orgao;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -32,7 +32,7 @@ public class ProcessoTest
     }
 
     /**
-     * Rigourous Test :-)
+     * Testa se o processo foi inserido no BD/HashMap
      */
     public void testcadastrarSucesso()
     {
@@ -44,6 +44,7 @@ public class ProcessoTest
     	String cpfInteressado = "05544422233";
     	String contato1 = "99992222";
     	String contato2 = "88889999";
+    	
     	GerenciadorFacade.cadastrarNovoProcesso(numeroProcesso, assuntoProcesso, new Orgao(unidadeOrigem), situacao, nomeInteressado, cpfInteressado, contato1, contato2);
     	HashProcessoDao dao = new HashProcessoDao();
     	

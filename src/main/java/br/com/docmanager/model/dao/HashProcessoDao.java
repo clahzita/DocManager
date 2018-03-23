@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import br.com.docmanager.model.Processo;
+import br.com.docmanager.model.domain.Processo;
 
 /**
  * Classe representa persistencia de dados
  * @author lets
  *
  */
-public final class HashProcessoDao implements Dao<Processo> {
+public final class HashProcessoDao implements IDao<Processo> {
 	
 	private static final HashMap<String, Processo> banco = new HashMap<String, Processo>();
 	
