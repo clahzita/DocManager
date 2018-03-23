@@ -13,6 +13,11 @@ public class Orgao {
 	private String sigla;
 	
 
+	public Orgao(String nome) {
+		// TODO Auto-generated constructor stub
+		this.nome = nome;
+	}
+
 	public String getCodigo() {
 		return codigo;
 	}
