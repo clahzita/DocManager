@@ -5,6 +5,8 @@ package br.com.docmanager.model;
 
 import java.time.LocalDateTime;
 
+import br.com.docmanager.model.dao.HashProcessoDao;
+
 /**
  * @author lets
  *
@@ -14,14 +16,14 @@ public class Processo {
 	private Interessado interessado;
 	private String nomeInteressado;
 	private String assunto;
-	private Setor unidadeOrigem;
+	private Orgao unidadeOrigem;
 	private LocalDateTime dataEntrada; //Hora registro do processo no banco
 	
 	private Situacao situacaoAtual;
 	
 	private String observacao;
 	
-	private Setor unidadeDestino; //para onde o processo é dirigido quando concluido	
+	private Orgao unidadeDestino; //para onde o processo é dirigido quando concluido	
 	private LocalDateTime dataSaida; //Hora que altera e grava situação para concluido
 	
 	/**
@@ -29,13 +31,15 @@ public class Processo {
 	 * @param interessado
 	 * @param assunto
 	 * @param unidadeOrigem
+	 * @param situacaoAtual
 	 */
-	public Processo(String numero, Interessado interessado, String assunto, Setor unidadeOrigem) {
+	public Processo(String numero, Interessado interessado, String assunto, Orgao unidadeOrigem, Situacao situacaoAtual) {
 		super();
 		this.numero = numero;
 		this.interessado = interessado;
 		this.assunto = assunto;
 		this.unidadeOrigem = unidadeOrigem;
+		this.situacaoAtual = situacaoAtual;
 	}
 	
 	public Processo() {
@@ -74,11 +78,11 @@ public class Processo {
 		this.assunto = assunto;
 	}
 
-	public Setor getUnidadeOrigem() {
+	public Orgao getUnidadeOrigem() {
 		return unidadeOrigem;
 	}
 
-	public void setUnidadeOrigem(Setor unidadeOrigem) {
+	public void setUnidadeOrigem(Orgao unidadeOrigem) {
 		this.unidadeOrigem = unidadeOrigem;
 	}
 
@@ -106,11 +110,11 @@ public class Processo {
 		this.observacao = observacao;
 	}
 
-	public Setor getUnidadeDestino() {
+	public Orgao getUnidadeDestino() {
 		return unidadeDestino;
 	}
 
-	public void setUnidadeDestino(Setor unidadeDestino) {
+	public void setUnidadeDestino(Orgao unidadeDestino) {
 		this.unidadeDestino = unidadeDestino;
 	}
 
@@ -122,6 +126,19 @@ public class Processo {
 		this.dataSaida = dataSaida;
 	}
 	
+	public void criar(Processo processo) {
+		processo.validate();
+		HashProcessoDao banco = new HashProcessoDao();
+		banco.salvar(processo);
+		
+		
+		
+	}
+
+	private void validate(){
+		// TODO Fazer validações de negócios
+		
+	}
 	
 	
 	

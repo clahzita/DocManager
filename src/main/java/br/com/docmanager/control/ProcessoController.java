@@ -3,18 +3,18 @@ package br.com.docmanager.control;
 import java.util.List;
 
 import br.com.docmanager.model.Processo;
-import br.com.docmanager.model.dao.ProcessoDao;
+import br.com.docmanager.model.dao.HashProcessoDao;
 import br.com.docmanager.view.ProcessoView;
 
 public class ProcessoController {
 	private Processo model;
 	private ProcessoView view;
-	private ProcessoDao dao;
+	private HashProcessoDao dao;
 	
 	public ProcessoController(Processo model, ProcessoView view) {
 		this.model = model;
 		this.view = view;
-		this.dao = new ProcessoDao();
+		this.dao = new HashProcessoDao();
 	}
 	
 	public String getProcessoNumero() {

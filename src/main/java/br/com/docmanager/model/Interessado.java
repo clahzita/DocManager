@@ -10,15 +10,31 @@ package br.com.docmanager.model;
  * @author clah
  *
  */
-public class Interessado extends Pessoa {
-
+public class Interessado {
+	private String nome;
+	private String cpf;
 	private String contato1;
 	private String contato2;
 	
-	public Interessado(String nome, String cpf) {
-		super(nome, cpf);
-	
+	public Interessado() {
+		
 	}
+
+	/**
+	 * @param nome
+	 * @param cpf
+	 * @param contato1
+	 * @param contato2
+	 */
+	public Interessado(String nome, String cpf, String contato1, String contato2) {
+		super();
+		this.nome = nome;
+		this.cpf = cpf;
+		this.contato1 = contato1;
+		this.contato2 = contato2;
+	}
+
+
 
 	public String getContato1() {
 		return contato1;
@@ -34,6 +50,25 @@ public class Interessado extends Pessoa {
 
 	public void setContato2(String contato2) {
 		this.contato2 = contato2;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getCpf() {
+		return cpf;
+	}
+
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	
 	

@@ -14,7 +14,7 @@ import br.com.docmanager.model.Processo;
  * @author lets
  *
  */
-public final class ProcessoDao implements DAO<Processo> {
+public final class HashProcessoDao implements Dao<Processo> {
 	
 	private static final HashMap<String, Processo> banco = new HashMap<String, Processo>();
 	
